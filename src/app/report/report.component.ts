@@ -83,8 +83,8 @@ export class ReportComponent implements OnInit {
         this.questionBankID = this.route.snapshot.params.questionBankID;
         console.log("id: "+ this.route.snapshot.params['questionBankID']);
         console.log("userid: "+this.route.snapshot.params['userid']);
-    this.list.getSingleReport(this.userid, this.questionBankID).subscribe((
-          result: IReportModel[]) => {
+    this.list.getSingleReport(this.userid, this.questionBankID).subscribe(
+          result => {
             console.log(result);
             this.reportid = result[0].reportid;
             this.userid = result[0].userid;
@@ -97,10 +97,8 @@ export class ReportComponent implements OnInit {
             console.log(this.scores);
             this.title = result[0].title;
             this.makeChart();
-
+            
           },
-          error => {
-            console.log('Failed to load questions. ' + error);
-          });
+    );
     }
 }

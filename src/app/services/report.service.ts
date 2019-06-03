@@ -17,7 +17,7 @@ export class ReportService {
   }
 
   getSingleReport(userid: Number, questionBankID: Number) {
-    return this.http.get<IReportModel[]>( 'http://localhost:1234/report/' + userid + '/reports/' + questionBankID);
+    return this.http.get<IReportModel>( 'http://localhost:1234/report/' + userid + '/reports/' + questionBankID);
 
 
   }

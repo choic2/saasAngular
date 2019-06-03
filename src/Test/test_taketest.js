@@ -32,7 +32,8 @@ describe('Check getting a Question Object when taking test', function() {
        expect(response).to.be.json;
    })
    it('The Oject has known properties', function(){
-       expect(requestResult).to.include.keys('questionBankID');
+       expect(requestResult).to.be.an('object');
+        expect(requestResult).to.include.keys('questionBankID');
        expect(requestResult).to.have.property('questionBankName');
        expect(requestResult).to.have.property('questionID');
        expect(requestResult).to.have.property('questionText');
